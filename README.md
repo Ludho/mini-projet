@@ -29,8 +29,8 @@ Se rendre dans le dossier postgresql et construire l'image:
     
 ## Les difficultés rencontrées
 
+Problème de connection entre odoo et psql
 Difficulté pour deployer avec kubernetes
-
 
 ## Dockerfile odoo
 
