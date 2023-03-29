@@ -13,13 +13,18 @@ RUN apt-get update && \
     && echo 'ea8277df4297afc507c61122f3c349af142f31e5 wkhtmltox.deb' | sha1sum -c - \
     && apt-get install -y --no-install-recommends ./wkhtmltox.deb
 
+# run as root
+RUN sudo -su
 
 # Ajout des clés + répo odoo
 RUN wget -O - https://nightly.odoo.com/odoo.key | sudo gpg --dearmor -o /usr/share/keyrings/odoo-archive-keyring.gpg && \
   echo 'deb [signed-by=/usr/share/keyrings/odoo-archive-keyring.gpg] https://nightly.odoo.com/16.0/nightly/deb/ ./' | sudo tee /etc/apt/sources.list.d/odoo.list
 
 # Installation odoo
-RUN sudo apt-get update && sudo apt-get install odoo
+RUN apt-get update && sudo apt-get install odoo
+
+# exit as root
+RUN exit
 
 # Configuration du fichier de configuration d'Odoo
 COPY ./odoo.conf /etc/odoo/odoo.conf
