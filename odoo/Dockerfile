@@ -6,6 +6,7 @@ RUN apt-get update && \
     apt-get install -y \
       wget \
       python3 \
+      curl \
       python3-dev \
       python3-pip \
     && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_amd64.deb \
