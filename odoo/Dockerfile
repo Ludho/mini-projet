@@ -1,0 +1,21 @@
+# Utilisation de l'image Debian
+FROM debian:buster-slim
+
+# Mise à jour des paquets et installer les dépendances nécessaires pour Odoo et wkhtmltopdf
+RUN apt-get update && \
+    apt-get install \
+      wget \
+      python3 \
+      python3-dev \
+      python3-pip \
+    && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_amd64.deb \
+    && echo 'ea8277df4297afc507c61122f3c349af142f31e5 wkhtmltox.deb' | sha1sum -c - \
+    && apt-get install -y --no-install-recommends ./wkhtmltox.deb
+
+
+# Ajout des clés + répo odoo
+RUN wget -O - https://nightly.odoo.com/odoo.key | sudo gpg --dearmor -o /usr/share/keyrings/odoo-archive-keyring.gpg && \
+  echo 'deb [signed-by=/usr/share/keyrings/odoo-archive-keyring.gpg] https://nightly.odoo.com/16.0/nightly/deb/ ./' | sudo tee /etc/apt/sources.list.d/odoo.list
+
+# Installation odoo
+RUN sudo apt-get update && sudo apt-get install odoo
