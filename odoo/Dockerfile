@@ -19,3 +19,12 @@ RUN wget -O - https://nightly.odoo.com/odoo.key | sudo gpg --dearmor -o /usr/sha
 
 # Installation odoo
 RUN sudo apt-get update && sudo apt-get install odoo
+
+# Configuration du fichier de configuration d'Odoo
+COPY ./odoo.conf /etc/odoo/odoo.conf
+
+# Exposition du port utilisé par Odoo
+EXPOSE 8069 # Commande de démarrage d'Odoo
+
+# Lancement odoo avec configuration
+CMD ["odoo", "-c", "/etc/odoo/odoo.conf"]
