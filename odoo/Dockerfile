@@ -27,7 +27,7 @@ RUN apt-get update && sudo apt-get install -y odoo
 # exit as root
 RUN exit
 
-# Configuration du fichier de configuration d'Odoo
+# Copie du fichier de configuration d'Odoo
 COPY ./odoo.conf /etc/odoo/odoo.conf
 
 # Exposition du port utilisé par Odoo
