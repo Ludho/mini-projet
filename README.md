@@ -35,11 +35,11 @@ Difficulté pour deployer avec kubernetes
 ## Dockerfile odoo
 
 
-Utilisation debian:buster-slim pour commencer avec une image légère 
-A partir de l'image nous avons installé les dépendances utiles
-Puis généré les clés pour l'utilisation de odoo
-Copie du fichier config dans le containeur de odoo
-Pour lancer l'application avec les config
+Utilisation debian:buster-slim pour commencer avec une image légère <br>
+A partir de l'image nous avons installé les dépendances utiles <br>
+Puis généré les clés pour l'utilisation de odoo <br>
+Copie du fichier config dans le containeur de odoo<br>
+Pour lancer l'application avec les config<br>
 
  
 
@@ -47,7 +47,7 @@ Pour lancer l'application avec les config
 
 
 
-Utilisation d'une image à partir d'une image dispobible sur le Docker Hub
+Utilisation d'une image à partir d'une image dispobible sur le Docker Hub<br>
 Création de l'utilisateur odoo
 
   
