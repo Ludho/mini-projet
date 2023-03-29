@@ -3,7 +3,7 @@ FROM debian:buster-slim
 
 # Mise à jour des paquets et installer les dépendances nécessaires pour Odoo et wkhtmltopdf
 RUN apt-get update && \
-    apt-get install \
+    apt-get install -y \
       wget \
       python3 \
       python3-dev \
