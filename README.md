@@ -33,6 +33,10 @@ Problème de connection entre odoo et psql
 <br>
 Difficulté pour deployer avec kubernetes
 
+## Optimization Dockerfile
+<br>
+Commencer par les commandes statics
+
 ## Dockerfile odoo
 
 
@@ -45,7 +49,6 @@ Pour lancer l'application avec les config<br>
  
 
 ## Dockerfile psql
-
 
 
 Utilisation d'une image à partir d'une image dispobible sur le Docker Hub<br>
